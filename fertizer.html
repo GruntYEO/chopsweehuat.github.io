@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>肥料</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .products-row {
+            display: flex;
+            justify-content: center;
+            gap: 32px; /* 產品之間的間距 */
+            margin: 40px 0;
+        }
+        .container {
+            max-width: 400px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+            padding: 24px;
+            text-align: center;
+        }
+        .product-img {
+            width: 120px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+        .product-title {
+            color: #a3541d;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+        .product-desc {
+            color: #444;
+            font-size: 1.05em;
+            margin-bottom: 18px;
+        }
+        .product-price {
+            background: #ffe7b2;
+            color: #b14d00;
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 1.15em;
+            font-weight: bold;
+            border-radius: 18px;
+            margin-bottom: 14px;
+        }
+        .qty-controls {
+            margin: 18px 0;
+        }
+        .qty-btn {
+            font-size: 1.3em;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #a3541d;
+            background: #fff;
+            color: #a3541d;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .qty-btn:hover {
+            background: #a3541d;
+            color: #fff;
+        }
+        .qty-value {
+            font-size: 1.3em;
+            min-width: 32px;
+            display: inline-block;
+        }
+        .info-list {
+            text-align: left;
+            margin: 20px auto 0 auto;
+            display: inline-block;
+            font-size: 0.98em;
+            background: #f3f3f3;
+            border-radius: 8px;
+            padding: 13px 16px;
+        }
+        .info-list li {
+            margin-bottom: 6px;
+        }
+        @media (max-width: 900px) {
+            .products-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+            }
+        }
+    </style>
+    <script>
+        function increaseQty(id) {
+            var qty = document.getElementById(id);
+            qty.textContent = Number(qty.textContent) + 1;
+        }
+        function decreaseQty(id) {
+            var qty = document.getElementById(id);
+            var current = Number(qty.textContent);
+            if (current > 1) {
+                qty.textContent = current - 1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="products-row">
+        <!-- BM 15-15-15 肥料 -->
+        <div class="container">
+            <img src="kudasinga.png" alt="BM" class="product-img">
+            <div class="product-title">BM15-15-15</div>
+            <div class="product-desc">肥料</div>
+            <div class="product-price">價錢price：RM188</div>
+            <div class="qty-controls">
+                <button class="qty-btn" onclick="decreaseQty('qty1')">-</button>
+                <span class="qty-value" id="qty1">1</span>
+                <button class="qty-btn" onclick="increaseQty('qty1')">+</button>
+            </div>
+            <ul class="info-list">
+                <li><strong>主要成分：</strong>全氮（N）、全磷（P）和水溶性氧化鉀（K2O），比例各為15%。</li>
+                <li><strong>類型：</strong>肥料</li>
+                <li><strong>用途：</strong>適合用於各種作物，促進植物的生長、發育和結果。 </li>
+                <li><strong>包裝：</strong>如圖所示</li>
+            </ul>
+        </div>
+        <!-- YARA 16-16-16 產品 -->
+        <div class="container">
+            <img src="yaramila16-16-16.jpg" alt="yara" class="product-img">
+            <div class="product-title">yaramila16-16-16</div>
+            <div class="product-desc">肥料</div>
+            <div class="product-price">價錢price：RM190</div>
+            <div class="qty-controls">
+                <button class="qty-btn" onclick="decreaseQty('qty2')">-</button>
+                <span class="qty-value" id="qty2">1</span>
+                <button class="qty-btn" onclick="increaseQty('qty2')">+</button>
+            </div>
+            <ul class="info-list">
+                <li><strong>主要成分：</strong>硝酸鹽氮和緩慢釋放的銨態氮的卓越組合</li>
+                <li><strong>類型：</strong>複合肥料</li>
+                <li><strong>用途：</strong>每粒YaraMila都含有氮、磷和鉀以及次要和微量營養素，可確保均衡的營養和碳水化合物的營養需求。</li>
+                <li><strong>包裝：</strong>如圖所示</li>
+            </ul>
+        </div>
+        <!-- BM 12-12-12-17-2 肥料 -->
+        <div class="container">
+            <img src="BM12-12-12.jpg" alt="yara" class="product-img">
+            <div class="product-title">BM12-12-12</div>
+            <div class="product-desc">肥料</div>
+            <div class="product-price">價錢price：RM196</div>
+            <div class="qty-controls">
+                <button class="qty-btn" onclick="decreaseQty('qty2')">-</button>
+                <span class="qty-value" id="qty2">1</span>
+                <button class="qty-btn" onclick="increaseQty('qty2')">+</button>
+            </div>
+            <ul class="info-list">
+                <li><strong>主要成分：</strong>指的是氮(N)、磷(P2O5)、鉀(K2O)三種主要元素在肥料中的比例，各佔12%。</li>
+                <li><strong>類型：</strong>複合肥料</li>
+                <li><strong>用途：</strong>12-12-12肥料含有高氮、高鈣成分，能滿足幼果期細胞分裂增值所需，促進果實肥大。</li>
+                <li><strong>包裝：</strong>如圖所示</li>
+    </div>
+</body>
+</html>
