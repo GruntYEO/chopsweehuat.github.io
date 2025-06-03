@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>草藥</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .products-row {
+            display: flex;
+            justify-content: center;
+            gap: 32px; /* 產品之間的間距 */
+            margin: 40px 0;
+        }
+        .container {
+            max-width: 400px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+            padding: 24px;
+            text-align: center;
+        }
+        .product-img {
+            width: 120px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+        .product-title {
+            color: #a3541d;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+        .product-desc {
+            color: #444;
+            font-size: 1.05em;
+            margin-bottom: 18px;
+        }
+        .product-price {
+            background: #ffe7b2;
+            color: #b14d00;
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 1.15em;
+            font-weight: bold;
+            border-radius: 18px;
+            margin-bottom: 14px;
+        }
+        .qty-controls {
+            margin: 18px 0;
+        }
+        .qty-btn {
+            font-size: 1.3em;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #a3541d;
+            background: #fff;
+            color: #a3541d;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .qty-btn:hover {
+            background: #a3541d;
+            color: #fff;
+        }
+        .qty-value {
+            font-size: 1.3em;
+            min-width: 32px;
+            display: inline-block;
+        }
+        .info-list {
+            text-align: left;
+            margin: 20px auto 0 auto;
+            display: inline-block;
+            font-size: 0.98em;
+            background: #f3f3f3;
+            border-radius: 8px;
+            padding: 13px 16px;
+        }
+        .info-list li {
+            margin-bottom: 6px;
+        }
+        @media (max-width: 900px) {
+            .products-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+            }
+        }
+    </style>
+    <script>
+        function increaseQty(id) {
+            var qty = document.getElementById(id);
+            qty.textContent = Number(qty.textContent) + 1;
+        }
+        function decreaseQty(id) {
+            var qty = document.getElementById(id);
+            var current = Number(qty.textContent);
+            if (current > 1) {
+                qty.textContent = current - 1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="products-row">
+        <!-- ken-up -->
+        <div class="container">
+            <img src="ken-up.jpg" alt="ken-up" class="product-img">
+            <div class="product-title">ken-up</div>
+            <div class="product-desc">草藥</div>
+            <div class="product-price">價錢price：RM240</div>
+            <div class="qty-controls">
+                <button class="qty-btn" onclick="decreaseQty('qty1')">-</button>
+                <span class="qty-value" id="qty1">1</span>
+                <button class="qty-btn" onclick="increaseQty('qty1')">+</button>
+            </div>
+            <ul class="info-list">
+                <li><strong>主要成分：</strong>草甘膦(Glyphosate)，它是一種廣效性除草劑，可以抑制植物的生長。</li>
+                <li><strong>類型：</strong>草藥</li>
+                <li><strong>用途：</strong>除草剂，用于杀死或抑制植物生长。 </li>
+                <li><strong>包裝：</strong>如圖所示</li>
+            </ul>
+        </div>
+        <!-- linoba -->
+        <div class="container">
+            <img src="linoba 1little.jpg" alt="linoba" class="product-img">
+            <div class="product-title">linoba 1little</div>
+            <div class="product-desc">草藥</div>
+            <div class="product-price">價錢price：RM30</div>
+            <div class="qty-controls">
+                <button class="qty-btn" onclick="decreaseQty('qty2')">-</button>
+                <span class="qty-value" id="qty2">1</span>
+                <button class="qty-btn" onclick="increaseQty('qty2')">+</button>
+            </div>
+            <ul class="info-list">
+                <li><strong>主要成分：</strong>一種不傷土壤的草藥</li>
+                <li><strong>類型：</strong>草藥</li>
+                <li><strong>用途：</strong>除草剂，用于杀死或抑制植物生长。</li>
+                <li><strong>包裝：</strong>如圖所示</li>
+            </ul>
+        </div>
+        <!-- BM 12-12-12-17-2 肥料 -->
+        <div class="container">
+            <img src="linoba 4little.jpg" alt="linoba" class="product-img">
+            <div class="product-title">linoba 4little</div>
+            <div class="product-desc">草藥</div>
+            <div class="product-price">價錢price：RM60</div>
+            <div class="qty-controls">
+                <button class="qty-btn" onclick="decreaseQty('qty2')">-</button>
+                <span class="qty-value" id="qty2">1</span>
+                <button class="qty-btn" onclick="increaseQty('qty2')">+</button>
+            </div>
+            <ul class="info-list">
+                <li><strong>主要成分：</strong>一種不傷土壤的草藥</li>
+                <li><strong>類型：</strong>草藥</li>
+                <li><strong>用途：</strong>除草剂，用于杀死或抑制植物生长。</li>
+                <li><strong>包裝：</strong>如圖所示</li>
+    </div>
+</body>
+</html>
